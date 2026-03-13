@@ -89,8 +89,16 @@ low, high = get_range_for_difficulty(difficulty)
 st.sidebar.caption(f"Range: {low} to {high}")
 st.sidebar.caption(f"Attempts allowed: {attempt_limit}")
 
-if "secret" not in st.session_state:
+if "difficulty" not in st.session_state:
+    st.session_state.difficulty = difficulty
+
+# FIX: the secret value changes when we change difficulties now, before it was exceeding our range
+if "secret" not in st.session_state or st.session_state.difficulty != difficulty:
+    st.session_state.difficulty = difficulty
     st.session_state.secret = random.randint(low, high)
+    st.session_state.attempts = 1
+    st.session_state.history = []
+    st.session_state.status = "playing"
 
 if "attempts" not in st.session_state:
     st.session_state.attempts = 1
@@ -105,9 +113,9 @@ if "history" not in st.session_state:
     st.session_state.history = []
 
 st.subheader("Make a guess")
-
+# Fix: the guess the number range is from low to high values not 1 to 100.
 st.info(
-    f"Guess a number between 1 and 100. "
+    f"Guess a number between {low} and {high}. "
     f"Attempts left: {attempt_limit - st.session_state.attempts}"
 )
 
