@@ -9,6 +9,12 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
   (for example: "the hints were backwards").
 
 ---
+- Whatever number I enter keeps showing the hint "Go Lower", even when the number I put is 1. The solution was 77.
+When the solution was 77, I started at 15 and the hint was "Go Lower". I expected it to be "Go Higher" 
+- When I get the "Game Over", I can't start a new game. 
+After finishing a game, I tried to press New Game. I expected a new game to start, but instead I just kept seeing the "Game Over", and I couldn't start a new game. 
+- When I changed the mode to easy mode, the range was supposed to be 1-20, but the secret was 31. I expected the secret to be  within the range the numbers were supposed to be in. The secret ended up being 31, which was outside of the range. 
+
 
 ## 2. How did you use AI as a teammate?
 
