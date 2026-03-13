@@ -133,8 +133,10 @@ with col3:
 
 if new_game:
     st.session_state.attempts = 0
+    # FIX: updated status as well as the rest of the information
     st.session_state.status = "playing"
-    st.session_state.secret = random.randint(1, 100)
+    # FIX: the game is updated so that the range isn't hardcoded, it uses the low and high values
+    st.session_state.secret = random.randint(low, high)
     st.success("New game started.")
     st.rerun()
 
